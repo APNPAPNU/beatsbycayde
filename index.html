@@ -1,0 +1,11 @@
+<!doctype html>
+$.ajax({
+  url: "https://www.bungie.net/platform/GroupV2/" + groupID + "/Members/",
+  headers: {
+    "X-API-Key": apiKey
+  }
+}).done(function(json) {
+  var members = json.Response.results;
+  console.log('Member list:', members);
+  listMembers(members);
+});
